@@ -1,4 +1,4 @@
 FinnaBeLocal::Application.routes.draw do
   resources :listings
-  root to: 'listings#index'
+  root to: 'static#home'
 end
