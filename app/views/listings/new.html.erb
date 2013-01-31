@@ -1,2 +1,17 @@
-<h1>Listings#new</h1>
-<p>Find me in app/views/listings/new.html.erb</p>
+<%= form_for @listing do |f| %>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %><br />
+  <%= f.label :body, "Body" %>
+  <%= f.text_area :body %><br />
+  <%= f.label :seller_email, "Seller Email" %>
+  <%= f.text_field :seller_email %><br />
+  <%= f.label :zip, "Zip" %>
+  <%= f.text_field :zip %><br />
+  <% Tags.all.each do |tag| %>
+    <div>
+      <%= check_box_tag :tag_ids, tag.id, @listing.tags.include?(tag), :name => 'listing[tag_ids][]' %>
+      <%= label_tag :tag_ids, tag.id %>
+    </div>
+  <% end %>
+  <%= f.submit %>
+<% end %>
