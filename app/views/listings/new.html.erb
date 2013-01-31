@@ -7,10 +7,10 @@
   <%= f.text_field :seller_email %><br />
   <%= f.label :zip, "Zip" %>
   <%= f.text_field :zip %><br />
-  <% Tags.all.each do |tag| %>
+  <% Tag.all.each do |tag| %>
     <div>
-      <%= check_box_tag :tag_ids, tag.id, @listing.tags.include?(tag), :name => 'listing[tag_ids][]' %>
-      <%= label_tag :tag_ids, tag.id %>
+      <%= check_box_tag "listing[tag_ids][]", tag.id, @listing.tags.include?(tag.id) %>
+      <%= label_tag :tag_ids, tag.name %>
     </div>
   <% end %>
   <%= f.submit %>
