@@ -1,9 +1,12 @@
-<%= search_form_for @q, :url => search_listings_path,
-                        :html => {:method => :post} do |f| %>
-  <%= f.label :name_cont %>
-  <%= f.text_field :name_cont %>
-  <%= f.text_field :zip, :placeholder => "Zip" %>
-  <%= f.submit %>
-<% end %>
-<%= link_to "View all listings", listings_path %>
-<%= link_to "List a new item", new_listing_path %>
+<div class="centered header">
+  <h1>Finna be Local!</h1>
+</div>
+<div class="centered search-bar ">
+  <%= search_form_for @q, :url => search_listings_path,
+                          :html => {:method => :post, :class => "form-wrapper"} do |f| %>
+    <%= f.text_field :name_cont,  :id => "search", :placeholder => "Search" %>
+    <%= f.text_field :zip, :id => "search-zip", :placeholder => "Zip" %>
+    <%= f.submit nil, { :id => "submit"} %>
+  <% end %>
+  <%= link_to "List a new item", new_listing_path %>
+</div>
