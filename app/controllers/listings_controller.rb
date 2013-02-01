@@ -4,7 +4,15 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @q = Listing.search(params[:q])
+    if !params[:q].nil? && zip_is_valid?(params[:q][:zip])
+      puts "hey"
+      @zip = params[:q][:zip]
+      params[:q].delete(:zip)
+      @q = Listing.where(zip: @zip).search(params[:q])
+    else
+      params[:q].delete(:zip) if params[:q]
+      @q = Listing.search(params[:q])
+    end
     @listings = @q.result(:distinct => true)
   end
 
@@ -16,5 +24,11 @@ class ListingsController < ApplicationController
     @listing = Listing.new(params[:listing])
     @listing.save
     redirect_to @listing
+  end
+
+  private
+
+  def zip_is_valid? zip
+    return zip =~ /^\d+$/ && zip.length == 5
   end
 end

@@ -2,6 +2,11 @@
                         :html => {:method => :post} do |f| %>
   <%= f.label :name_cont %>
   <%= f.text_field :name_cont %>
+  <% if @zip %>
+    <%= f.hidden_field :zip, value: @zip %>
+  <% else %>
+    <%= f.text_field :zip, :placeholder => "Zip" %>
+  <% end %>
   <%= f.submit %>
 <% end %>
 <% @listings.each do |listing| %>

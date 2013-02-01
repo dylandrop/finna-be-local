@@ -2,6 +2,7 @@
                         :html => {:method => :post} do |f| %>
   <%= f.label :name_cont %>
   <%= f.text_field :name_cont %>
+  <%= f.text_field :zip, :placeholder => "Zip" %>
   <%= f.submit %>
 <% end %>
 <%= link_to "View all listings", listings_path %>
