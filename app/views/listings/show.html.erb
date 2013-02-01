@@ -2,4 +2,4 @@
 <%= @listing.body %>
 <%= @listing.seller_email %>
 <%= @listing.zip %>
-<%= @listing.tags %>
+<%= @listing.tags.collect(&:name) %>
