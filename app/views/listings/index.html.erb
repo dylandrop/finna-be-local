@@ -1,3 +1,9 @@
+<%= search_form_for @q, :url => search_listings_path,
+                        :html => {:method => :post} do |f| %>
+  <%= f.label :name_cont %>
+  <%= f.text_field :name_cont %>
+  <%= f.submit %>
+<% end %>
 <% @listings.each do |listing| %>
   <%= listing.name %>
   <%= listing.body %>

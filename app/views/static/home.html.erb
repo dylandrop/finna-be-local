@@ -1,2 +1,8 @@
+<%= search_form_for @q, :url => search_listings_path,
+                        :html => {:method => :post} do |f| %>
+  <%= f.label :name_cont %>
+  <%= f.text_field :name_cont %>
+  <%= f.submit %>
+<% end %>
 <%= link_to "View all listings", listings_path %>
 <%= link_to "List a new item", new_listing_path %>
