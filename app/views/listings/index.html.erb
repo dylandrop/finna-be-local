@@ -9,10 +9,17 @@
     <%= f.text_field :zip, :id => "search-zip", :placeholder => "Zip" %>
   <% end %>
 <% end %>
-<% @listings.each do |listing| %>
-  <%= listing.name %>
-  <%= listing.body %>
-  <%= listing.seller_email %>
-  <%= listing.zip %>
-  <%= listing.tags.collect(&:name) %>
-<% end %>
+<div class="container">
+  <div class="row listings">
+    <% @listings.each do |listing| %>
+      <div class="span4 listing">
+        <div>
+          <h3><%= listing.name %></h3><br>
+          <%= listing.body %><br>
+          <%= listing.zip %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>

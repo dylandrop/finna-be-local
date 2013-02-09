@@ -44,7 +44,7 @@ h1 {
 }
 
 .header {
-  width: 850px;
+  width: 795px;
   text-shadow: 2px 2px grey;
   color: rgb(87, 190, 145);
 }
@@ -209,4 +209,29 @@ ul.tagit {
 #myTags {
   background-color: #fff;
   max-width: 208px;
+}
+
+
+/******* LISTINGS ******/
+
+.listing {
+  display: inline-block;
+  height: 150px;
+  background: url("white_paper.jpg");
+  margin-top: 20px;
+  background-position: 50% 50%;
+}
+
+.listings div:nth-child(2n) {
+  background-position: 0% 0%;
+}
+.listings div:nth-child(3n) {
+  background-position: 60% 20%;
+}
+.listings div:nth-child(5n) {
+  background-position: 20% 60%;
+}
+
+.listing div {
+  padding: 0 20px;
 }
