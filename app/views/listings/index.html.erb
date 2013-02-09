@@ -1,13 +1,13 @@
 <%= search_form_for @q, :url => search_listings_path,
-                        :html => {:method => :post} do |f| %>
-  <%= f.label :name_cont %>
-  <%= f.text_field :name_cont %>
+                        :html => {:method => :post, :class => "form-wrapper"} do |f| %>
+  <%= f.text_field :name_cont,  :id => "search", :placeholder => "Search" %>
+  
+  <%= f.submit nil, { :id => "submit"} %>
   <% if @zip %>
-    <%= f.hidden_field :zip, value: @zip %>
+    <%= f.text_field :zip, :id => "search-zip", :value => @zip %>
   <% else %>
-    <%= f.text_field :zip, :placeholder => "Zip" %>
+    <%= f.text_field :zip, :id => "search-zip", :placeholder => "Zip" %>
   <% end %>
-  <%= f.submit %>
 <% end %>
 <% @listings.each do |listing| %>
   <%= listing.name %>

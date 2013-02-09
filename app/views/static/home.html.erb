@@ -1,5 +1,8 @@
 <div class="centered header">
-  <h1>Finna be Local!</h1>
+  <h1><em>Finna be Local!</em></h1>
+</div>
+<div class="subline" align="center">
+  <h4>Keeping your search for apartments, furniture, and jobs local.</h4>
 </div>
 <div class="centered search-bar ">
   <%= search_form_for @q, :url => search_listings_path,
@@ -8,5 +11,12 @@
     <%= f.text_field :zip, :id => "search-zip", :placeholder => "Zip" %>
     <%= f.submit nil, { :id => "submit"} %>
   <% end %>
-  <%= link_to "List a new item", new_listing_path %>
 </div>
+<div align="center">
+  <%= link_to new_listing_path, class: "new-listing-link-text" do %>
+      <div class="new-listing-link">
+        LIST A NEW ITEM
+      </div>
+    <% end %>
+</div>
+<br><br>

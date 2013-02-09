@@ -21,7 +21,11 @@ class ListingsController < ApplicationController
   end
 
   def create
+    tags = params[:listing][:tags]
+    tag_ids = Tag.ids_from_string(tags)
+    params[:listing].delete :tags
     @listing = Listing.new(params[:listing])
+    @listing.tag_ids = tag_ids
     @listing.save
     redirect_to @listing
   end

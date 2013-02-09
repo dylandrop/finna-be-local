@@ -1,17 +1,59 @@
-<%= form_for @listing do |f| %>
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %><br />
-  <%= f.label :body, "Body" %>
-  <%= f.text_area :body %><br />
-  <%= f.label :seller_email, "Seller Email" %>
-  <%= f.text_field :seller_email %><br />
-  <%= f.label :zip, "Zip" %>
-  <%= f.text_field :zip %><br />
-  <% Tag.all.each do |tag| %>
-    <div>
-      <%= check_box_tag "listing[tag_ids][]", tag.id, @listing.tags.include?(tag.id) %>
-      <%= label_tag :tag_ids, tag.name %>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#myTags").tagit({
+            availableTags: ["apartments", "bikes", "for sale", "free", "williamsburg", "upper-west-side", "pool"],
+            singleField: true,
+            singleFieldNode: $('#mySingleField'),
+            removeConfirmation: true
+        });
+    });
+</script>
+<div class="container">
+  <br><br>
+<h2>List your item, apartment, or job.</h2>
+<br><br>
+<%= form_for @listing, html: {class: "form-horizontal"} do |f| %>
+  <div class="control-group">
+    <%= f.label :name, "Name", class: "control-label", for: "listing_name" %>
+    <div class="controls">
+      <%= f.text_field :name %><br />
     </div>
-  <% end %>
-  <%= f.submit %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :name, "Body", class: "control-label", for: "listing_body" %>
+    <div class="controls">
+      <%= f.text_area :body %><br />
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :name, "Seller Email", class: "control-label", for: "listing_seller_email" %>
+    <div class="controls">
+      <%= f.text_field :seller_email %><br />
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :name, "Zip", class: "control-label", for: "listing_zip" %>
+    <div class="controls">
+      <%= f.text_field :zip %><br />
+    </div>
+  </div>
+
+  <input name="tags" id="mySingleField" value="" type="hidden">
+  <div class="control-group">
+    <%= f.label :name, "Tags", class: "control-label", for: "myTags" %>
+    <div class="controls">
+      <ul id="myTags" class="tagit">
+      </ul><br />
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+    <%= f.submit "Submit", class: "btn" %>
+    </div>
+  </div>
 <% end %>
+</div>
