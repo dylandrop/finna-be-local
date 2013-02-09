@@ -12,48 +12,52 @@
   <br><br>
 <h2>List your item, apartment, or job.</h2>
 <br><br>
-<%= form_for @listing, html: {class: "form-horizontal"} do |f| %>
-  <div class="control-group">
-    <%= f.label :name, "Name", class: "control-label", for: "listing_name" %>
-    <div class="controls">
-      <%= f.text_field :name %><br />
-    </div>
-  </div>
+  <div class="row">
+    <div class="span6">
+      <%= form_for @listing, html: {class: "form-horizontal"} do |f| %>
+        <div class="control-group">
+          <%= f.label :name, "Name", class: "control-label", for: "listing_name" %>
+          <div class="controls">
+            <%= f.text_field :name %><br />
+          </div>
+        </div>
 
-  <div class="control-group">
-    <%= f.label :name, "Body", class: "control-label", for: "listing_body" %>
-    <div class="controls">
-      <%= f.text_area :body %><br />
-    </div>
-  </div>
+        <div class="control-group">
+          <%= f.label :name, "Body", class: "control-label", for: "listing_body" %>
+          <div class="controls">
+            <%= f.text_area :body %><br />
+          </div>
+        </div>
 
-  <div class="control-group">
-    <%= f.label :name, "Seller Email", class: "control-label", for: "listing_seller_email" %>
-    <div class="controls">
-      <%= f.text_field :seller_email %><br />
-    </div>
-  </div>
+        <div class="control-group">
+          <%= f.label :name, "Seller Email", class: "control-label", for: "listing_seller_email" %>
+          <div class="controls">
+            <%= f.text_field :seller_email %><br />
+          </div>
+        </div>
 
-  <div class="control-group">
-    <%= f.label :name, "Zip", class: "control-label", for: "listing_zip" %>
-    <div class="controls">
-      <%= f.text_field :zip %><br />
-    </div>
-  </div>
+        <div class="control-group">
+          <%= f.label :name, "Zip", class: "control-label", for: "listing_zip" %>
+          <div class="controls">
+            <%= f.text_field :zip %><br />
+          </div>
+        </div>
 
-  <input name="tags" id="mySingleField" value="" type="hidden">
-  <div class="control-group">
-    <%= f.label :name, "Tags", class: "control-label", for: "myTags" %>
-    <div class="controls">
-      <ul id="myTags" class="tagit">
-      </ul><br />
-    </div>
-  </div>
+        <input name="tags" id="mySingleField" value="" type="hidden">
+        <div class="control-group">
+          <%= f.label :name, "Tags", class: "control-label", for: "myTags" %>
+          <div class="controls">
+            <ul id="myTags" class="tagit">
+            </ul><br />
+          </div>
+        </div>
 
-  <div class="control-group">
-    <div class="controls">
-    <%= f.submit "Submit", class: "btn" %>
+        <div class="control-group">
+          <div class="controls">
+          <%= f.submit "Submit", class: "btn" %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-<% end %>
 </div>
