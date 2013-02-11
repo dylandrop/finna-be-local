@@ -1,5 +1,28 @@
-<%= @listing.name %>
-<%= @listing.body %>
-<%= @listing.seller_email %>
-<%= @listing.zip %>
-<%= @listing.tags.collect(&:name) %>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#listing-show-tags").tagit({
+            availableTags: ["apartments", "bikes", "for sale", "free", "williamsburg", "upper-west-side", "pool"],
+            singleField: true,
+            singleFieldNode: $('#listing-show-tag-values'),
+            removeConfirmation: true,
+            readOnly: true
+        });
+    });
+</script>
+<div class="container">
+  <div class="row">
+    <div class="span2"></div>
+    <div class="listing-show span8">
+      <div>
+        <h3><%= @listing.name.upcase %></h3>
+        <br><br>
+        <%= @listing.body %><br><br>
+        <%= mail_to @listing.seller_email, @listing.seller_email %><br><br>
+        <%= @listing.zip %><br><br>
+        <input id="listing-show-tag-values" value='<%= @listing.tags.collect(&:name).to_s[1..-2] %>' type="hidden">
+        <ul id="listing-show-tags" class="tagit"></ul>
+      </div>
+    </div>
+    <div class="span2"></div>
+  </div>
+</div>

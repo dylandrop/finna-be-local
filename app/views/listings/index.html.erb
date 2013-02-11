@@ -12,13 +12,15 @@
 <div class="container">
   <div class="row listings">
     <% @listings.each do |listing| %>
-      <div class="span4 listing">
-        <div>
-          <h3><%= listing.name %></h3><br>
-          <%= listing.body %><br>
-          <%= listing.zip %>
+      <%= link_to listing do %>
+        <div class="span4 listing">
+          <div>
+            <h3><%= truncate(listing.name, length: 15).upcase %></h3><br>
+            <%= truncate(listing.body, length: 48) %><br>
+            <%= listing.zip %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

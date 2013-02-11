@@ -18,7 +18,7 @@
 
 body {
   /*background-color: #dcfa70;*/
-  background: url("background.jpg") no-repeat center center fixed;
+  background: url("backgroundwithlogo.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -46,7 +46,7 @@ h1 {
 .header {
   width: 795px;
   text-shadow: 2px 2px grey;
-  color: rgb(87, 190, 145);
+  color: #FFAD33;
 }
 
 .header h1 {
@@ -185,13 +185,12 @@ h1 {
   padding: 20px;
   margin: 0 auto;
   border-radius: 5px;
-  border-width: 1px;
+  border-width: 0px;
   border-style: solid;
   border-color: #dedede #bababa #aaa #bababa;
   -moz-box-shadow: inset 0 0 5px #888;
   -webkit-box-shadow: inset 0 0 5px#888;
   box-shadow: inner 0 0 5px #888;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKElEQVQIW2P8DwQMUHD8URoDI0wAxLGUmwURgHFAChmPPUz9D5KBAQCx2hgElitFOAAAAABJRU5ErkJggg==) repeat;
 }
 
 .new-listing-link-text, .new-listing-link-text:hover {
@@ -220,18 +219,63 @@ ul.tagit {
   background: url("white_paper.jpg");
   margin-top: 20px;
   background-position: 50% 50%;
+  opacity: 0.9;
 }
 
-.listings div:nth-child(2n) {
+.listings a:nth-child(2n) div {
   background-position: 0% 0%;
 }
-.listings div:nth-child(3n) {
+.listings a:nth-child(3n) div {
   background-position: 60% 20%;
 }
-.listings div:nth-child(5n) {
+.listings a:nth-child(5n) div {
   background-position: 20% 60%;
 }
 
 .listing div {
   padding: 0 20px;
+}
+
+.listing h3 {
+  font-family: 'Voltaire';
+}
+
+.listings a {
+  color: black;
+}
+
+.listings a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/********* LISTING-SHOW ********/
+
+.listing-show {
+  background: url("white_paper.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 500px;
+  margin-top: 30px;
+  opacity: 0.9;
+}
+
+.listing-show div {
+  padding: 50px;
+}
+
+.listing-show div h3 {
+  font-family: 'Voltaire';
+  font-size: 50px;
+}
+
+#listing-show-tags {
+  border: none;
+  padding: 0;
+}
+
+ul.tagit input[type="text"] {
+  cursor: auto;
 }
