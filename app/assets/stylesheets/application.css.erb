@@ -107,7 +107,20 @@ h1 {
   border-radius: 3px;      
 }
 
-.form-wrapper #search:focus, #search-zip:focus {
+.form-wrapper #search-tags {
+  width: 435px;
+  float: left;    
+  font-size: 14px;
+  border: 1px solid #ccc;
+  -moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
+  -webkit-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
+  box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;    
+}
+
+.form-wrapper #search:focus, #search-zip:focus, #search-tags:focus {
   outline: 0; 
   border-color: #aaa;
   -moz-box-shadow: 0 1px 1px #bbb inset;
@@ -115,15 +128,15 @@ h1 {
   box-shadow: 0 1px 1px #bbb inset;  
 }
 
-.form-wrapper #search::-webkit-input-placeholder, #search-zip::-webkit-input-placeholder {
+.form-wrapper #search::-webkit-input-placeholder, #search-zip::-webkit-input-placeholder, #search-tags::-webkit-input-placeholder {
    color: #999;
 }
 
-.form-wrapper #search:-moz-placeholder, #search-zip:-moz-placeholder {
+.form-wrapper #search:-moz-placeholder, #search-zip:-moz-placeholder, #search-tags:-moz-placeholder {
   color: #999;
 }
 
-.form-wrapper #search:-ms-input-placeholder, #search-zip:-ms-input-placeholder {
+.form-wrapper #search:-ms-input-placeholder, #search-zip:-ms-input-placeholder, #search-tags:-ms-input-placeholder {
         color: #999;
 } 
 

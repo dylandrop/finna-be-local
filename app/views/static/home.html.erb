@@ -1,3 +1,13 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#search-tags").tagit({
+            availableTags: ["apartments", "bikes", "for sale", "free", "williamsburg", "upper-west-side", "pool"],
+            singleField: true,
+            singleFieldNode: $('#mySingleField'),
+            removeConfirmation: true
+        });
+    });
+</script>
 <div class="centered header">
   <h1><em>finna be local!</em></h1>
 </div>
@@ -9,7 +19,11 @@
                           :html => {:method => :post, :class => "form-wrapper"} do |f| %>
     <%= f.text_field :name_cont,  :id => "search", :placeholder => "Search" %>
     <%= f.text_field :zip, :id => "search-zip", :placeholder => "Zip" %>
-    <%= f.submit nil, { :id => "submit"} %>
+    <%= f.submit nil, { :id => "submit"} %><br/>
+    <input name="tags" id="mySingleField" value="" type="hidden">
+    <ul class="tagit" id="search-tags">
+    </ul>
+    </div>
   <% end %>
 </div>
 <div align="center">

@@ -1,3 +1,13 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#search-tags").tagit({
+            availableTags: ["apartments", "bikes", "for sale", "free", "williamsburg", "upper-west-side", "pool"],
+            singleField: true,
+            singleFieldNode: $('#mySingleField'),
+            removeConfirmation: true
+        });
+    });
+</script>
 <%= search_form_for @q, :url => search_listings_path,
                         :html => {:method => :post, :class => "form-wrapper"} do |f| %>
   <%= f.text_field :name_cont,  :id => "search", :placeholder => "Search" %>
@@ -8,6 +18,10 @@
   <% else %>
     <%= f.text_field :zip, :id => "search-zip", :placeholder => "Zip" %>
   <% end %>
+  <input name="tags" id="mySingleField" value="" type="hidden">
+  <input name="tags" id="mySingleField" value="" type="hidden">
+  <ul class="tagit" id="search-tags">
+  </ul>
 <% end %>
 <div class="container">
   <div class="row listings">
