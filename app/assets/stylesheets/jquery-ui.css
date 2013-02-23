@@ -533,7 +533,6 @@ button.ui-button::-moz-focus-inner {
 	height: 100%;
 }
 .ui-progressbar .ui-progressbar-overlay {
-	background: url("images/animated-overlay.gif");
 	height: 100%;
 	filter: alpha(opacity=25);
 	opacity: 0.25;
@@ -834,12 +833,12 @@ body .ui-tooltip {
 	border: 1px solid #dddddd;
 	background: #f6f6f6 url(images/ui-bg_highlight-soft_100_f6f6f6_1x100.png) 50% 50% repeat-x;
 	font-weight: bold;
-	color: #0073ea;
+	color: #ffad33;
 }
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-	color: #0073ea;
+	color: #ffad33;
 	text-decoration: none;
 }
 .ui-state-hover,
@@ -848,10 +847,9 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	border: 1px solid #0073ea;
-	background: #0073ea url(images/ui-bg_highlight-soft_25_0073ea_1x100.png) 50% 50% repeat-x;
+	border: 1px solid #ffad33;
+	background: #ffad33 url(images/ui-bg_highlight-soft_25_0073ea_1x100.png) 50% 50% repeat-x;
 	font-weight: bold;
-	color: #ffffff;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
