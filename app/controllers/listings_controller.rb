@@ -12,7 +12,8 @@ class ListingsController < ApplicationController
       params[:q].delete(:zip) if params[:q]
       @q = Listing.search(params[:q])
     end
-    @listings = @q.result(:distinct => true).by_tag(params[:tags])
+    @listings = @q.result(:distinct => true)
+    @listings.by_tag(params[:tags]) if !params[:tags].nil?
   end
 
   def show
