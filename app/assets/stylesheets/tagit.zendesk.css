@@ -3,9 +3,7 @@
 
 
 ul.tagit {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #ffad33;
+    border: none;
     background: inherit;
 }
 ul.tagit li.tagit-choice {
