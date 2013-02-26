@@ -5,7 +5,7 @@ class Listing < ActiveRecord::Base
 
   scope :named_like, (lambda do |name| 
     if name.present?
-      self.where("name ILIKE ?", "%#{name}%")
+      self.where("listings.name ILIKE ?", "%#{name}%")
     end
   end)
 
