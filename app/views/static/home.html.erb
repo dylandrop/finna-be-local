@@ -1,7 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#search-tags").tagit({
-            availableTags: ["apartments", "bikes", "for sale", "free", "williamsburg", "upper-west-side", "pool"],
+            availableTags: ["apartments", "bikes", "for-sale", "free", "williamsburg", "upper-west-side", "pool"],
             singleField: true,
             singleFieldNode: $('#mySingleField'),
             removeConfirmation: true
@@ -14,12 +14,12 @@
 <div class="subline" align="center">
   <h4>Keeping your search for apartments, furniture, and jobs local.</h4>
 </div>
-<div class="centered search-bar ">
-  <%= search_form_for @q, :url => search_listings_path,
+<div class="centered search-bar">
+  <%= form_for :q, :url => search_listings_path,
                           :html => {:method => :post, :class => "form-wrapper"} do |f| %>
-    <%= f.text_field :name_cont,  :id => "search", :placeholder => "Search" %>
+    <%= f.text_field :name,  :id => "search", :placeholder => "Search" %>
     <%= f.text_field :zip, :id => "search-zip", :placeholder => "Zip" %>
-    <%= f.submit nil, { :id => "submit"} %><br/>
+    <%= f.submit "SEARCH", { :id => "submit"} %><br/>
     <input name="tags" id="mySingleField" value="" type="hidden">
     <ul class="tagit" id="search-tags">
     </ul>

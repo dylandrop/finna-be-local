@@ -8,11 +8,11 @@
         });
     });
 </script>
-<%= search_form_for @q, :url => search_listings_path,
+<%= form_for :q, :url => search_listings_path,
                         :html => {:method => :post, :class => "form-wrapper"} do |f| %>
-  <%= f.text_field :name_cont,  :id => "search", :placeholder => "Search" %>
+  <%= f.text_field :name,  :id => "search", :placeholder => "Search" %>
   
-  <%= f.submit nil, { :id => "submit"} %>
+  <%= f.submit "SEARCH", { :id => "submit"} %>
   <% if @zip %>
     <%= f.text_field :zip, :id => "search-zip", :value => @zip %>
   <% else %>

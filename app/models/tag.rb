@@ -4,7 +4,7 @@ class Tag < ActiveRecord::Base
   has_many :listings, through: :taggings
 
   def self.ids_from_string tag_string
-    tag_string = "\"" + tag_string.split(",").join("\", \"") + "\""
+    tag_string = "\'" + tag_string.split(",").join("\', \'") + "\'"
     where("name in ("+tag_string+")").collect(&:id)
   end
 end
