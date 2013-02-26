@@ -4,10 +4,14 @@ class ListingsController < ApplicationController
   end
 
   def index
-    if !params[:q].nil? && zip_is_valid?(params[:q][:zip])
-      @zip = params[:q][:zip]
+    if params[:q].nil?
+      @listings = Listing.all
+    else
+      if zip_is_valid?(params[:q][:zip])
+        @zip = params[:q][:zip]
+      end
+      @listings = Listing.zip_near(params[:q][:zip]).named_like(params[:q][:name]).by_tag(params[:tags])
     end
-    @listings = Listing.zip_near(params[:q][:zip]).named_like(params[:q][:name]).by_tag(params[:tags])
   end
 
   def show

@@ -1,7 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#search-tags").tagit({
-            availableTags: ["apartments", "bikes", "for sale", "free", "williamsburg", "upper-west-side", "pool"],
+            availableTags: ["apartments", "bikes", "for-sale", "free", "williamsburg", "upper-west-side", "pool"],
             singleField: true,
             singleFieldNode: $('#mySingleField'),
             removeConfirmation: true
@@ -18,7 +18,6 @@
   <% else %>
     <%= f.text_field :zip, :id => "search-zip", :placeholder => "Zip" %>
   <% end %>
-  <input name="tags" id="mySingleField" value="" type="hidden">
   <input name="tags" id="mySingleField" value="" type="hidden">
   <ul class="tagit" id="search-tags">
   </ul>
