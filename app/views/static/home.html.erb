@@ -1,7 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#search-tags").tagit({
-            availableTags: ["apartments", "bikes", "for-sale", "free", "williamsburg", "upper-west-side", "pool"],
+            availableTags: <%= tag_names %>,
             singleField: true,
             singleFieldNode: $('#mySingleField'),
             removeConfirmation: true
